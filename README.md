@@ -6,8 +6,6 @@ Aplicação desktop em JavaFX para **cadastrar (Create)** e **consultar (Retriev
 
 A entidade `Produto` é abstrata e possui duas especializações: `Comida` e `Bebida`. Os atributos apresentados são ID, nome, descrição, preço, categoria e tipo. O mapeamento usa herança `SINGLE_TABLE`: as subclasses são persistidas na tabela `produtos`, diferenciadas pela coluna `tipo_produto`.
 
-> **Adaptação necessária:** este projeto é uma implementação autônoma de referência. Como o código da camada ORM e as classes atuais do projeto original não foram fornecidos, foi configurado Hibernate + H2 para que a aplicação funcione imediatamente. Para cumprir literalmente a exigência de reutilizar o ORM da atividade anterior, substitua a configuração de `HibernateUtil` e adapte `ProdutoRepository` à persistência que seu grupo já implementou.
-
 ## Tecnologias
 
 - Java 21
@@ -64,31 +62,3 @@ src/main/resources/view/
 - Validação de campos obrigatórios e preço.
 - Atualização da `TableView` após cadastro.
 - Persistência entre execuções por meio do banco H2 em arquivo.
-
-## Capturas de tela
-
-Depois de executar a aplicação:
-1. Tire uma captura da janela inicial com a tabela.
-2. Cadastre um produto de exemplo e tire outra captura mostrando a mensagem de sucesso e o registro na tabela.
-3. Salve as imagens nesta pasta com os nomes `docs/tela-inicial.png` e `docs/produto-cadastrado.png`.
-4. Se desejar, inclua-as abaixo:
-
-```markdown
-![Tela inicial](docs/tela-inicial.png)
-![Produto cadastrado](docs/produto-cadastrado.png)
-```
-
-## Publicar no GitHub
-
-Crie um repositório vazio no GitHub e execute na pasta do projeto:
-
-```bash
-git init
-git add .
-git commit -m "Implementa CRUD JavaFX de produtos"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
-git push -u origin main
-```
-
-Substitua a URL pelo endereço real do repositório criado.
