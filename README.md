@@ -14,6 +14,9 @@ A entidade `Produto` é abstrata e possui duas especializações: `Comida` e `Be
 - H2 Database (arquivo local)
 - Maven
 
+- <img width="900" height="648" alt="image" src="https://github.com/user-attachments/assets/107d32be-d499-4e9c-9c46-e7fffc31a6ba" />
+
+
 ## Como executar
 
 1. Instale o JDK 21 e o Maven.
