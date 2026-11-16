@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.com.restaurante.controller.ProdutoController">
+    <top>
+        <VBox spacing="5" style="-fx-background-color: #243447; -fx-padding: 18;">
+            <Label text="GERENCIAMENTO DE PRODUTOS" style="-fx-text-fill: white; -fx-font-size: 21px; -fx-font-weight: bold;"/>
+            <Label text="Restaurante — consulta e cadastro" style="-fx-text-fill: #dbeafe; -fx-font-size: 12px;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="12">
+            <padding><Insets top="18" right="20" bottom="18" left="20"/></padding>
+            <Label text="Cadastrar produto" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <GridPane hgap="10" vgap="9">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50"/>
+                    <ColumnConstraints percentWidth="50"/>
+                </columnConstraints>
+                <Label text="Nome" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoNome" promptText="Ex.: Hambúrguer artesanal" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label text="Tipo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="comboTipo" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Descrição" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoDescricao" promptText="Descrição (opcional)" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Label text="Categoria" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <TextField fx:id="campoCategoria" promptText="Ex.: Lanche, Refrigerante" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Label text="Preço (R$)" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoPreco" promptText="Ex.: 25.90" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <Button text="Cadastrar produto" onAction="#cadastrarProduto" maxWidth="Infinity"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"
+                        GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            </GridPane>
+            <Label fx:id="mensagem" text=" " wrapText="true"/>
+            <Separator/>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Produtos cadastrados" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Atualizar lista" onAction="#atualizarTabela"/>
+            </HBox>
+            <TableView fx:id="tabelaProdutos" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colunaId" text="ID" prefWidth="55"/>
+                    <TableColumn fx:id="colunaNome" text="Nome" prefWidth="220"/>
+                    <TableColumn fx:id="colunaTipo" text="Tipo" prefWidth="100"/>
+                    <TableColumn fx:id="colunaCategoria" text="Categoria" prefWidth="150"/>
+                    <TableColumn fx:id="colunaPreco" text="Preço (R$)" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
